@@ -1,0 +1,94 @@
+.main-navigation {
+    border-bottom: 1px solid rgba(255, 255, 255, 0);
+    transition: border-color .5s;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+
+
+    &.scrolled {
+        border-color: rgba(255, 255, 255, 1);
+
+        .logo {
+            width: 40px;
+            height: 40px;
+
+            &:before {
+                left: -200%;
+                opacity: 0;
+            }
+
+            &:after {
+                left: 0%;
+            }
+        }
+    }
+
+    .logo {
+        width: 230px;
+        height: 40px;
+        margin: 20px 10px 20px 10px;
+        display: inline-block;
+        position: relative;
+
+        &:before {
+            content: '';
+            background-image: url("../img/holone.svg");
+            background-size: contain;
+            background-repeat: no-repeat;
+            position: absolute;
+            left: 0%;
+            transition: left .5s, opacity 0.2s;
+            width: 230px;
+            height: 40px;
+        }
+
+        &:after {
+            content: '';
+            background-image: url("../img/holone_dot.svg");
+            background-size: contain;
+            background-repeat: no-repeat;
+            position: absolute;
+            width: 40px;
+            height: 40px;
+            left: -200%;
+            transition: left .5s;
+        }
+    }
+
+    .navigation {
+        display: inline-block;
+        position: absolute;
+        right: 0;
+        height: 100%;
+
+        ul {
+            line-height: 80px;
+        }
+
+        .navigation-link {
+            margin: 0 20px 0 20px;
+            display: inline-block;
+            position: relative;
+
+            &:after {
+                content: '';
+                background-color: #fff;
+                height: 2px;
+                width: 100%;
+                position: absolute;
+                bottom: -2;
+                opacity: 0;
+                transition: bottom 0.3s, opacity 0.2s;
+            }
+
+            &:hover {
+                &:after {
+                    bottom: 0;
+                    opacity: 1;
+                }
+            }
+        }
+    }
+}

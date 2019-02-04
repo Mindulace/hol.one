@@ -1,0 +1,37 @@
+<html>
+    <head>
+        <title>hul.one greening</title>
+        <link rel="stylesheet" href="./src/css/all.css"/>
+    </head>
+    <body>
+        <div class="main-navigation" id="test">
+            <div class="logo">
+            </div>
+            <div class="navigation">
+                <ul>
+                    <a class="navigation-link" href="#"><li>home</li></a>
+                    <a class="navigation-link" href="#"><li>trending</li></a>
+                    <a class="navigation-link" href="#"><li>history</li></a>
+                    <a class="navigation-link" href="#"><li>kontakt</li></a>
+                </ul>
+            </div>
+        </div>
+        <div class="lol">
+
+        </div>
+        <script>
+            window.onscroll = function() {
+                var body = window.document.body;
+                var document = window.document.documentElement; //IE with doctype
+                var mainNavigation = window.document.getElementById('test');
+                document = (window.document.clientHeight) ? document : body;
+
+                if (document.scrollTop > mainNavigation.clientHeight) {
+                    mainNavigation.classList.add('scrolled');
+                } else {
+                    mainNavigation.classList.remove('scrolled');
+                }
+            }
+        </script>
+    </body>
+</html>
