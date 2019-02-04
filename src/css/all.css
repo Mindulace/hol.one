@@ -43,6 +43,12 @@ ul {
 .main-navigation.scrolled .logo:after {
   left: 0%;
 }
+.main-navigation.scrolled .navigation ul {
+  opacity: 0;
+}
+.main-navigation.scrolled .navigation .menu-icon {
+  opacity: 1;
+}
 .main-navigation .logo {
   width: 230px;
   height: 40px;
@@ -77,14 +83,20 @@ ul {
   position: absolute;
   right: 0;
   height: 100%;
+  font-family: 'Work Sans', sans-serif;
 }
 .main-navigation .navigation ul {
   line-height: 80px;
+  display: inline-block;
+  opacity: 1;
+  transition: opacity 0.2s;
 }
 .main-navigation .navigation .navigation-link {
   margin: 0 20px 0 20px;
   display: inline-block;
   position: relative;
+  font-size: 20px;
+  letter-spacing: 5px;
 }
 .main-navigation .navigation .navigation-link:after {
   content: '';
@@ -99,4 +111,37 @@ ul {
 .main-navigation .navigation .navigation-link:hover:after {
   bottom: 0;
   opacity: 1;
+}
+.main-navigation .navigation .menu-icon {
+  position: relative;
+  display: inline-block;
+  margin-right: 20px;
+  width: 30px;
+  height: 24px;
+  cursor: pointer;
+  opacity: 0;
+  transition: opacity 0.2s;
+}
+.main-navigation .navigation .menu-icon:after {
+  content: '';
+  top: 9px;
+}
+.main-navigation .navigation .menu-icon:before {
+  content: '';
+  top: 18px;
+}
+.main-navigation .navigation .menu-icon:after,
+.main-navigation .navigation .menu-icon:before,
+.main-navigation .navigation .menu-icon .menu-icon-top {
+  height: 4px;
+  width: 100%;
+  border: 1px solid #fff;
+  position: absolute;
+  background-color: none;
+  transition: background-color 0.2s;
+}
+.main-navigation .navigation .menu-icon:hover:after,
+.main-navigation .navigation .menu-icon:hover:before,
+.main-navigation .navigation .menu-icon:hover .menu-icon-top {
+  background-color: #fff;
 }
