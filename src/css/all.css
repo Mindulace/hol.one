@@ -1,6 +1,6 @@
 body {
   margin: 0;
-  background-image: linear-gradient(29deg, #2a006e, #743cd7);
+  background-image: linear-gradient(147deg, #f56a79, #002d40);
   color: #fff;
   position: relative;
 }
@@ -43,10 +43,21 @@ ul {
 .main-navigation.scrolled .logo:after {
   left: 0%;
 }
-.main-navigation.scrolled .navigation ul {
+.main-navigation.scrolled .navigation .navigation-list {
   opacity: 0;
 }
 .main-navigation.scrolled .navigation .menu-icon {
+  opacity: 1;
+  cursor: pointer;
+}
+.main-navigation.offcanvas .navigation .navigation-list {
+  opacity: 0;
+}
+.main-navigation.offcanvas .navigation .menu-icon {
+  opacity: 0;
+}
+.main-navigation.offcanvas .navigation .menu-offcanvas {
+  right: 0;
   opacity: 1;
 }
 .main-navigation .logo {
@@ -58,7 +69,7 @@ ul {
 }
 .main-navigation .logo:before {
   content: '';
-  background-image: url("../img/holone.svg");
+  background-image: url("../img/logo_text_holone_export.svg");
   background-size: contain;
   background-repeat: no-repeat;
   position: absolute;
@@ -69,12 +80,12 @@ ul {
 }
 .main-navigation .logo:after {
   content: '';
-  background-image: url("../img/holone_dot.svg");
+  background-image: url("../img/logo_iceberg_only_holone_export.svg");
   background-size: contain;
   background-repeat: no-repeat;
   position: absolute;
-  width: 40px;
-  height: 40px;
+  width: 60px;
+  height: 60px;
   left: -200%;
   transition: left .5s;
 }
@@ -85,7 +96,7 @@ ul {
   height: 100%;
   font-family: 'Work Sans', sans-serif;
 }
-.main-navigation .navigation ul {
+.main-navigation .navigation .navigation-list {
   line-height: 80px;
   display: inline-block;
   opacity: 1;
@@ -118,7 +129,7 @@ ul {
   margin-right: 20px;
   width: 30px;
   height: 24px;
-  cursor: pointer;
+  cursor: default;
   opacity: 0;
   transition: opacity 0.2s;
 }
@@ -145,4 +156,54 @@ ul {
 .main-navigation .navigation .menu-icon:hover:before,
 .main-navigation .navigation .menu-icon:hover .menu-icon-top {
   background-color: #fff;
+}
+.main-navigation .navigation .menu-offcanvas {
+  box-shadow: 1px 1px 20px rgba(0, 0, 0, 0.2);
+  position: fixed;
+  top: 0;
+  right: -20%;
+  height: 100%;
+  opacity: 0;
+  transition: right 1s, opacity 0.5s;
+}
+.main-navigation .navigation .menu-offcanvas .menu-offcanvas-options .menu-offcanvas-options-item {
+  padding: 10px;
+}
+.main-navigation .navigation .menu-offcanvas .menu-offcanvas-list {
+  min-width: 250px;
+  margin-top: 21px;
+}
+.main-navigation .navigation .menu-offcanvas .menu-offcanvas-list-item {
+  line-height: 60px;
+  padding-right: 50px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+  text-align: right;
+}
+.main-navigation .navigation .menu-offcanvas .menu-offcanvas-list-item:hover {
+  background-color: rgba(50, 50, 50, 0.4);
+}
+.icon-cross {
+  width: 40px;
+  height: 40px;
+  display: block;
+  position: relative;
+  margin-left: auto;
+  cursor: pointer;
+}
+.icon-cross:before,
+.icon-cross:after {
+  content: '';
+  width: 100%;
+  height: 1px;
+  background-color: #fff;
+  display: block;
+  position: absolute;
+  bottom: 50%;
+}
+.icon-cross:before {
+  transform: rotate(45deg);
+}
+.icon-cross:after {
+  transform: rotate(135deg);
 }

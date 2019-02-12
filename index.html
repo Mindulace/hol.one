@@ -1,6 +1,6 @@
 <html>
     <head>
-        <title>hul.one greening</title>
+        <title>hol.one</title>
         <link rel="stylesheet" href="./src/css/all.css"/>
         <link href="https://fonts.googleapis.com/css?family=Work+Sans:300" rel="stylesheet"> 
     </head>
@@ -9,14 +9,33 @@
             <div class="logo">
             </div>
             <div class="navigation">
-                <ul>
+                <ul class="navigation-list">
                     <a class="navigation-link" href="#"><li>home</li></a>
                     <a class="navigation-link" href="#"><li>trending</li></a>
                     <a class="navigation-link" href="#"><li>history</li></a>
                     <a class="navigation-link" href="#"><li>kontakt</li></a>       
                 </ul>
-                <div class="menu-icon">
+                <div id="menu-offcanvas-icon" class="menu-icon">
                     <div class="menu-icon-top"></div>
+                </div>
+                <div id="menu-offcanvas" class="menu-offcanvas">
+                    <ul class="menu-offcanvas-options">
+                        <li class="menu-offcanvas-options-item"><i id="menu-offcanvas-options-item-cross" class="icon-cross"></i></li>
+                    </ul>
+                    <ul class="menu-offcanvas-list">
+                        <li class="menu-offcanvas-list-item">
+                            home
+                        </li>
+                        <li class="menu-offcanvas-list-item">
+                            trending
+                        </li>
+                        <li class="menu-offcanvas-list-item">
+                            history
+                        </li>
+                        <li class="menu-offcanvas-list-item">
+                            kontakt
+                        </li>
+                    </ul>
                 </div>
             </div>
         </div>
@@ -36,6 +55,12 @@
                     mainNavigation.classList.remove('scrolled');
                 }
             }
+            document.getElementById("menu-offcanvas-icon").addEventListener("click", function(){
+                document.getElementById('test').classList.toggle("offcanvas");
+            });
+            document.getElementById("menu-offcanvas-options-item-cross").addEventListener("click", function(){
+                document.getElementById('test').classList.toggle("offcanvas");
+            }); 
         </script>
     </body>
 </html>
