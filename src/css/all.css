@@ -8,8 +8,26 @@ img {
   max-width: 100%;
   max-height: 100%;
 }
-.lol {
+.main-content {
+  margin-top: 81px;
   height: 2440px;
+}
+.main-content .content--row {
+  margin: 0 auto;
+  display: table;
+}
+.main-content .content--row .error--container {
+  display: inline-block;
+  padding-top: 130px;
+}
+.main-content .content--row .error--container .error--img {
+  width: 30%;
+  margin: 0 auto;
+}
+.main-content .content--row .error--container .error--msg {
+  margin-top: 20px;
+  font-family: Arial;
+  letter-spacing: 7px;
 }
 a:link,
 a:visited {
